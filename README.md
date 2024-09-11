@@ -6,7 +6,7 @@ This repository provides a set of cryptographic tools and utilities implemented 
 
 ## Features
 
-- **Hashing**: Create secure hashes using various algorithms such as SHA-256 and SHA-512.
+- **Hashing**: Create secure hashes using various algorithms such as SHA-1 SHA-384 SHA-256 and SHA-512.
 - **Encryption/Decryption**: Symmetric encryption using AES algorithms.
 - **RSA Key Generation**: Generate public/private key pairs for RSA encryption.
 - **Digital Signing**: Sign data using private keys.
@@ -15,3 +15,18 @@ This repository provides a set of cryptographic tools and utilities implemented 
 ## Installation
 
 Clone the repository and install dependencies:
+
+
+## USAGE
+### Hashing
+
+### Hashing
+
+Create a secure hash using SHA-256:
+
+```javascript
+// Example data
+const data = "Hello World";
+const hash = buildSHA256Hash(data);
+console.log(`Hash: ${hash}`);
+```
