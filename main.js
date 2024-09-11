@@ -1,5 +1,7 @@
+import version from './src/version.js';
+
 const moduleWorker = () => {
-    console.log('Crypto Module \n');
+    console.log(`Crypto Module ${version}\n`);
 }
 
 moduleWorker();
