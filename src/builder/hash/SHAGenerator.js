@@ -8,9 +8,8 @@ export const HASHING_ALGORITHM = {
     SHA1: 'sha1',
     SHA256: 'sha256',
     SHA384: 'sha384',
-    SHA512: 'sha512',
+    SHA512: 'sha-w512',
 }
-
 
 /**
  *
@@ -19,7 +18,11 @@ export const HASHING_ALGORITHM = {
  * @returns {string} hashed data returns in 'HEX' format
  */
 export const hashData = (algorithm, string) => {
-    const hash = crypto.createHash(algorithm);
-    hash.update(string);
-    return hash.digest('hex');
+    try {
+        const hash = crypto.createHash(algorithm);
+        hash.update(string);
+        return hash.digest('hex');
+    } catch (error) {
+        throw new Error(`Hashing data failed,\n${error}`);
+    }
 }
