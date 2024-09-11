@@ -27,6 +27,6 @@ Create a secure hash using SHA-256:
 ```javascript
 // Example data
 const data = "Hello World";
-const hash = buildSHA256Hash(data);
+const hash = hashData(HASHING_ALGORITHM.SHA256, data);
 console.log(`Hash: ${hash}`);
 ```
