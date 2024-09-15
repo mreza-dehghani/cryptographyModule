@@ -19,9 +19,6 @@ Clone the repository and install dependencies:
 
 ## USAGE
 ### Hashing
-
-### Hashing
-
 Create a secure hash using SHA-256:
 
 ```javascript
@@ -29,4 +26,17 @@ Create a secure hash using SHA-256:
 const data = "Hello World";
 const hash = hashData(HASHING_ALGORITHM.SHA256, data);
 console.log(`Hash: ${hash}`);
+```
+
+### Base64
+Working with base64 util to encode and decode contents.
+
+```javascript
+// Example data
+const originalContent ="Hello World"; 
+const encodedContent = base64Encode(originalContent);
+const decodedContent = base64Decode(encodedContent);
+
+console.log(`Base64 encoded: ${encodedContent}`);
+console.log(`Base64 decoded: ${decodedContent}`);
 ```
