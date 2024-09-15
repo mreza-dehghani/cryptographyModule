@@ -40,3 +40,10 @@ const decodedContent = base64Decode(encodedContent);
 console.log(`Base64 encoded: ${encodedContent}`);
 console.log(`Base64 decoded: ${decodedContent}`);
 ```
+
+#### to reading file content buffer use util readFileContent
+
+```javascript
+// Example usage
+const buffer = readFileContent('//path'); 
+```
