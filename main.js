@@ -21,16 +21,9 @@ const moduleWorker = async () => {
             rl.close();
         });
 
-        rl.question("insert yor string to convert:\n", function (string) {
-            if(string === 'exit')
-                rl.close();
-        });
-
         rl.on("close", function () {
             process.exit(0);
         });
-
-
     } catch (error) {
         console.error(error);
     }
