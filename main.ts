@@ -1,5 +1,4 @@
 import version from './src/version'
-import {appTs} from "./src";
 
 const moduleWorker = async () => {
     try {
@@ -11,9 +10,4 @@ const moduleWorker = async () => {
 }
 
 moduleWorker();
-appTs()
 
-console.log(1111111)
-console.log(1111111555)
-console.log(666)
-console.log(666677776)
