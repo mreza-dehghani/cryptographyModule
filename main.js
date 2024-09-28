@@ -7,13 +7,6 @@ const moduleWorker = async () => {
     try {
         console.log(`Crypto Module ${version}\n`);
 
-        const message = "Hello world!";
-        const encrypted = encrypt(message);
-        console.log("Encrypted:", encrypted);
-
-        const decrypted = decrypt(encrypted.encryptedData,encrypted.key, encrypted.iv);
-        console.log("Decrypted:", decrypted);
-
     } catch (error) {
         console.error(error);
     }
