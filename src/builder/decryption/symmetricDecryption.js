@@ -8,7 +8,11 @@ import crypto from "crypto";
  * @returns {string}
  */
 export const decrypt = (encryptedText, key, iv) => {
-    const decipher = crypto.createDecipheriv('aes-256-ctr', Buffer.from(key, 'base64'), Buffer.from(iv, 'base64'));
-    const decrypted = Buffer.concat([decipher.update(Buffer.from(encryptedText, 'base64')), decipher.final()]);
-    return decrypted.toString();
+    try {
+        const decipher = crypto.createDecipheriv('aes-256-ctr', Buffer.from(key, 'base64'), Buffer.from(iv, 'base64'));
+        const decrypted = Buffer.concat([decipher.update(Buffer.from(encryptedText, 'base64')), decipher.final()]);
+        return decrypted.toString();
+    } catch (error) {
+        throw error;
+    }
 }

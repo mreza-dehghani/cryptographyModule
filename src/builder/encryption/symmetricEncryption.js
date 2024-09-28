@@ -13,10 +13,14 @@ import crypto from "crypto";
  * @param options accepts key and initial vector
  * @returns {{encryptedData: string, iv: (*|string), key: (*|string)}} encrypted data
  */
-export const encrypt = (plainText, options={key: null, iv: null}) => {
-    const key = options?.key ?? crypto.randomBytes(32); // 256-bit key
-    const iv = options?.iv ?? crypto.randomBytes(16); // Initialization vector
-    const cipher = crypto.createCipheriv('aes-256-ctr', key, iv);
-    const encrypted = Buffer.concat([cipher.update(plainText, 'utf8'), cipher.final()]);
-    return { key:key.toString('base64'), iv: iv.toString('base64'), encryptedData: encrypted.toString('base64') };
+export const encrypt = (plainText, options = {key: null, iv: null}) => {
+    try {
+        const key = options?.key ?? crypto.randomBytes(32); // 256-bit key
+        const iv = options?.iv ?? crypto.randomBytes(16); // Initialization vector
+        const cipher = crypto.createCipheriv('aes-256-ctr', key, iv);
+        const encrypted = Buffer.concat([cipher.update(plainText, 'utf8'), cipher.final()]);
+        return {key: key.toString('base64'), iv: iv.toString('base64'), encryptedData: encrypted.toString('base64')};
+    } catch (error) {
+        throw error;
+    }
 }
