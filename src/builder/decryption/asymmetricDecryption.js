@@ -24,6 +24,10 @@ import crypto from "crypto";
  * @returns {string}
  */
 export const decryptMessage = (encryptedMessage, privateKey) => {
-    const decrypted = crypto.privateDecrypt(privateKey, Buffer.from(encryptedMessage, 'base64'));
-    return decrypted.toString();
+    try {
+        const decrypted = crypto.privateDecrypt(privateKey, Buffer.from(encryptedMessage, 'base64'));
+        return decrypted.toString();
+    } catch (error) {
+        console.error(error);
+    }
 }

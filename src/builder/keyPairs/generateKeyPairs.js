@@ -23,8 +23,12 @@ import crypto from "crypto";
  * @returns {{privateKey: KeyObject, publicKey: KeyObject}}
  */
 export const generateRsaKeyPair = (keyLength = 1024) => {
-    const {publicKey, privateKey} = crypto.generateKeyPairSync('rsa', {
-        modulusLength: keyLength,
-    });
-    return {publicKey, privateKey};
+    try {
+        const {publicKey, privateKey} = crypto.generateKeyPairSync('rsa', {
+            modulusLength: keyLength,
+        });
+        return {publicKey, privateKey};
+    } catch (error) {
+        throw error;
+    }
 }

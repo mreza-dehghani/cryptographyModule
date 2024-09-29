@@ -20,6 +20,10 @@ import crypto from "crypto";
  * @returns {string}
  */
 export const encryptMessage = (message, publicKey) => {
-    const encrypted = crypto.publicEncrypt(publicKey, Buffer.from(message));
-    return encrypted.toString('base64');
+    try {
+        const encrypted = crypto.publicEncrypt(publicKey, Buffer.from(message));
+        return encrypted.toString('base64');
+    } catch (error) {
+        throw error;
+    }
 }
