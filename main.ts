@@ -1,4 +1,4 @@
-import version from './src/version.js'
+import version from './src/version'
 
 const moduleWorker = async () => {
     try {
@@ -10,3 +10,4 @@ const moduleWorker = async () => {
 }
 
 moduleWorker();
+

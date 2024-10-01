@@ -1,11 +1,11 @@
-import fs from "node:fs";
+import * as fs from "node:fs";
 
 /**
  * read file content as binary
  * @param filePath absolute file path
  * @returns {string} its buffer of read file
  */
-export const readFileContent = filePath => {
+export const readFileContent = (filePath: string): string => {
     try {
         fs.existsSync(filePath)
     } catch (error) {

@@ -2,9 +2,13 @@
   "name": "cryptographymodule",
   "version": "1.0.0",
   "description": "cryptographic tools and utilities",
-  "main": "main.js",
+  "main": "main.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "start": "node dist/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run build && npm run start",
+    "start:dev": "npx nodemon"
   },
   "repository": {
     "type": "git",
@@ -25,5 +29,11 @@
     "url": "https://github.com/acnt-dv/cryptographyModule/issues"
   },
   "homepage": "https://github.com/acnt-dv/cryptographyModule#readme",
-  "type": "module"
+  "devDependencies": {
+    "@types/node": "^22.7.4",
+    "nodemon": "^3.1.7",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  }
 }

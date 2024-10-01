@@ -2,11 +2,11 @@ import readline from "node:readline";
 
 /**
  * encode incoming string or content to base64 string.
- * @param string origin
  * @returns {string} base64
+ * @param str
  */
-export const base64Encode = (string) => {
-    return Buffer.from(string).toString('base64');
+export const base64Encode = (str: string): string => {
+    return Buffer.from(str).toString('base64');
 }
 
 /**
@@ -14,7 +14,7 @@ export const base64Encode = (string) => {
  * @param base64
  * @returns {string}
  */
-export const base64Decode = (base64) => {
+export const base64Decode = (base64: string): string => {
     return Buffer.from(base64, 'base64').toString('ascii');
 }
 
@@ -22,7 +22,7 @@ export const base64Decode = (base64) => {
  * simple command line module to test base64 converter.
  * @returns {Promise<void>}
  */
-export const base64ConverterTest = async () => {
+export const base64ConverterTest = (): void => {
     try {
 
         const readLine = readline.createInterface({
@@ -30,7 +30,7 @@ export const base64ConverterTest = async () => {
             output: process.stdout
         });
 
-        await readLine.question("insert yor string to convert:\n", function (string) {
+        readLine.question("insert yor string to convert:\n", function (string) {
             const base64 = base64Encode(string);
             console.log(`Original input: ${base64Decode(base64)}`);
             console.log(`Base64 output: ${base64}`);
